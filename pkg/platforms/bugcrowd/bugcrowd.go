@@ -154,7 +154,7 @@ func Login(email, password, otpFetchCommand, proxy string) (string, error) {
 	firstLoginRes, err := rateLimitedSendHTTPRequest(
 		&whttp.WHTTPReq{
 			Method: "POST",
-			URL:    "https://identity.bugcrowd.com/login",
+			URL:    "https://identity.bugcrowd.com/auth/otp-challenge",
 			Headers: []whttp.WHTTPHeader{
 				{Name: "User-Agent", Value: USER_AGENT},
 				{Name: "X-Csrf-Token", Value: csrfTokenFromCookie},
